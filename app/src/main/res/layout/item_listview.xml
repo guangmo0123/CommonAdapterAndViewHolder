@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minLines="1"
+        android:text="标题"
+        android:textSize="16sp" />
+
+    <!--
+        在Item中，若存在button或checkbox时，默认会抢占item的点击焦点，
+        此需要调整焦点的设置，有2种方法：
+        1、在抢占焦点的view上加上focusable="false"，表示默认没有焦点
+        2、在Item的父布局中添加descendantFocusability="blocksDescendants"，表示焦点按顺序传递
+    -->
+    <CheckBox
+        android:id="@+id/chb_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="5dp"
+        android:maxLines="2"
+        android:minLines="1"
+        android:text="摘要"
+        android:textColor="#898989"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_desc"
+        android:layout_marginTop="5dp"
+        android:minLines="1"
+        android:text="2018-09-29"
+        android:textColor="#898989"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_desc"
+        android:layout_marginTop="5dp"
+        android:background="#00ffe5"
+        android:drawableLeft="@mipmap/icon_phone"
+        android:drawablePadding="2dp"
+        android:minHeight="0dp"
+        android:minLines="1"
+        android:padding="3dp"
+        android:text="10086"
+        android:textColor="#000000"
+        android:textSize="12sp" />
+
+</RelativeLayout>
